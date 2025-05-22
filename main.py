@@ -1,5 +1,5 @@
-from flask import Flask,render_template
-import os,requests
+from flask import Flask,render_template,request
+import os
 
 
 app = Flask(__name__)
@@ -22,4 +22,13 @@ def help():
 def sign_in():
     return render_template("sign_in.html")
     
- 
+ @app.post("/sign_in_action")
+ def sign_in_action():
+     email = request.form["email"]
+     password = request.form["password"]
+     credentials = []
+     with open("./appData/userData","r") as userData:
+         pass
+         
+         
+         
